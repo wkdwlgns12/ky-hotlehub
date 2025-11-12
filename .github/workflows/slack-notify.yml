@@ -63,7 +63,7 @@ jobs:
           PR_TITLE: ${{ github.event.pull_request.title }}
           PR_URL: ${{ github.event.pull_request.html_url }}
         run: |
-          TEXT="✅ [${REPO}] PR 머지 완료: ${PR_TITLE}\n👤 ${ACTOR}\n🔗 ${PR_URL}"
+          TEXT="✅ [${REPO}] PR 나머지 완료: ${PR_TITLE}\n👤 ${ACTOR}\n🔗 ${PR_URL}"
           payload=$(printf '{"text":"%s"}' "$TEXT")
 
           curl -X POST -H 'Content-type: application/json' \
