@@ -28,7 +28,7 @@ jobs:
       - name: Send push message
         if: ${{ github.event_name == 'push' }}
         run: |
-          TEXT="🟢 [${REPO}] ${ACTOR}가 '${REF_NAME}' 브랜치에 push 했습니다."
+          TEXT="🟢 [${REPO}] ${ACTOR}가 '${REF_NAME}' 브랜치에 push 했니다."
           payload=$(printf '{"text":"%s"}' "$TEXT")
 
           # 🔔 공용 채널(#hotelhub-general)
