@@ -5,6 +5,7 @@ on:
     branches:
       - main
       - develop
+      - bbb
        # 🔐 branch 추가 가능
   pull_request:
     types: [opened, reopened, closed]
