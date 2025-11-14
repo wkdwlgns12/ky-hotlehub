@@ -1,0 +1,782 @@
+/*  폰트  */
+@font-face {
+    font-family: 'Isamanru';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10@1.0/GongGothicLight.woff') format('woff');
+    font-weight: 300;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'OmuDaye';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-01@1.0/omyu_pretty.woff2') format('woff2');
+    font-weight: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'SacheonUniverse';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2506-1@1.0/SacheonUju-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-display: swap;
+}
+
+
+/* 전체 레이아웃 */
+.listing_layout {
+    display: flex;
+    align-items: flex-start;
+    gap: 30px;
+    max-width: 1300px;
+    margin: 180px auto;
+    padding: 0 20px;
+}
+
+.button_result{
+    display: none;
+    text-align: center;
+    margin: 20px 0;
+}
+
+.button_result button {
+    width: 25%;
+    height: 35px;
+    font-size: 18px;
+    font-weight: bold;
+    background: #112211;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.tab_content {
+    display: none;
+}
+
+.tab_content.active {
+    display: block;
+}
+
+/*서치 박스*/
+.search_box1 {
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #fff;
+    padding: 25px 30px;
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    width: 100%;
+    max-width: 1250px;
+    box-sizing: border-box;
+}
+
+.search_inputs2 {
+    display: flex;
+    align-items: flex-end;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.search_inputs2 input {
+    flex: 1;
+    min-width: 180px;
+    height: 45px;
+    padding: 10px 15px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    font-size: 14px;
+    outline: none;
+    transition: all 0.2s ease-in-out;
+    box-sizing: border-box;
+}
+
+.search_inputs2 input:focus {
+    border-color: #46BD7B;
+    box-shadow: 0 0 5px rgba(70, 189, 123, 0.4);
+}
+
+.search_inputs2 button:focus {
+    border-color: #46BD7B;
+    box-shadow: 0 0 5px rgba(70, 189, 123, 0.4);
+}
+
+.input-group3 {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-width: 180px;
+}
+
+.input-group3 label {
+    font-size: 13px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.search_icon4{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background-color: #46BD7B;
+    color: white;
+    border-radius: 10px;
+    padding: 0 25px;
+    height: 40px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    font-size: 16px;
+}
+
+.search_icon4:hover {
+    background-color: #38a368;
+}
+
+.number_people4 {
+    display: flex;
+    background: none;
+    border: 1px solid #ddd;
+    padding: 10px 15px;
+    border-radius: 16px;
+    cursor: pointer;
+}
+
+.people_modal4{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.7);
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+
+}
+
+.people_content2{
+    background: #fff;
+    width: 100%;
+    height: 90%;
+    max-width: 800px;
+    max-height: 900px;
+    padding: 20px;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+
+.people_content2 h3 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.sort_content {
+    padding: 20px;
+    width: 100%;
+    max-width: 800px;
+}
+
+/* 슬라이드 애니메이션 */
+@keyframes slideUp {
+    from {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.counter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+.controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.controls button {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: none;
+    background: #46bd7b;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.controls button:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+}
+
+.warning {
+    font-size: 11px;
+    display: flex;
+    align-items: center;
+    background: #dddddd;
+    border-radius: 10px;
+    padding: 5px;
+    gap: 5px;
+    margin-top: 10px;
+}
+
+.warning i{
+    text-align: center;
+    align-items: center;
+}
+
+.modal-actions {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 40px;
+}
+
+.close_btn {
+    flex: 1;
+    background: #ccc;
+    color: black;
+    border: none;
+    padding: 12px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.apply_btn {
+    flex: 1;
+    background: #46bd7b;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.apply_btn:hover {
+    background: #38a368;
+}
+
+/* 슬라이드 애니메이션 */
+.slide-up-enter-active,
+.slide-up-leave-active {
+    transition: all 0.3s ease;
+}
+.slide-up-enter-from,
+.slide-up-leave-to {
+    transform: translateY(100%);
+    opacity: 0;
+}
+
+
+/* Filters 전체 */
+.filter_box {
+    position: sticky;
+}
+
+.filter_box p{
+    font-size: 15px;
+    text-align: left;
+    color: black;
+}
+
+.filter_box .filter_text{
+    font-family: 'SacheonUniverse';
+    padding-bottom: 20px;
+    font-size: 20px;
+}
+
+.filter_section {
+    text-align: left;
+    margin-bottom: 90px;
+}
+
+.filter_section p {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Price 슬라이더 */
+.slider {
+    width: 100%;
+    accent-color:#46BD7B;
+}
+
+.price_labels {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    color: black;
+    grid-auto-flow: column;
+
+}
+
+/* Rating 버튼 */
+.rating_buttons {
+    display: flex;
+    gap: 10px;
+
+}
+
+.rating_buttons button {
+    border: 1px solid #46BD7B;
+    background: #fff;
+    padding: 6px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.rating_buttons button:hover {
+    background: #46BD7B;
+    color: #fff;
+    border-color: #46BD7B;
+}
+
+.rating_buttons button.active {
+    background: #46BD7B;
+    color: #fff;
+    border-color: #46BD7B;
+}
+
+/* 체크박스 */
+.filter_section label {
+    font-size: 14px;
+    color: #333;
+}
+
+/*호텔 숙소 정보 */
+/* 폰트 */
+@font-face {
+    font-family: 'KccSign';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.0/KCC-Ganpan.woff2') format('woff2');
+    font-weight: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'SacheonUniverse';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2506-1@1.0/SacheonUju-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-display: swap;
+}
+
+.room_list {
+    margin-right: 110px;
+    flex-direction: column;
+    gap: 40px;
+    margin-top: 10px;
+}
+
+/* 숙소 카드 */
+.room_box {
+    width: 1480px;
+    display: flex;
+    background: #fff;
+    border: 1px solid #e5e5e5;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    gap: 30px;
+    padding: 14px;
+    position: relative;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    max-width: 850px;
+    margin-bottom: 20px;
+    left: 6%;
+
+}
+
+.room_box:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+/* 이미지 */
+.room_box .image {
+    flex: 1;
+    max-width: 200px;
+    position: relative;
+
+}
+
+.room_box .image img {
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+/* 오른쪽 컨텐츠 */
+.content {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-size: 13px;
+}
+
+/* 호텔 이름 */
+.one h3 {
+    text-align: left;
+    margin: 0 0 10px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #222;
+}
+
+/* 위치  */
+.locate {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    font-size: 12px;
+    color: #555;
+}
+
+.locate i {
+    display: flex;
+    color: #46BD7B;
+    font-size: 14px;
+}
+
+/* 리뷰/편의시설 */
+.review_container {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    font-size: 12px;
+}
+
+.star_icon {
+    color: #FF8682;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 12px;
+}
+
+.AMinities_box {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    font-size: 12px;
+
+    color: #333;
+}
+
+.score_review_box{
+    align-items: center;
+    text-align: center;
+    display: flex;
+    margin-top: 10px;
+    gap: 10px;
+}
+
+.score {
+    border: 1px solid #46BD7B;
+    border-radius: 8px;
+    width: 35px;
+    height: 35px;
+   padding: 10px 10px;
+    font-size: 12px;
+    font-weight: bold;
+    color: #112211;
+}
+
+.review_text {
+    font-size: 12px;
+    color: #333;
+}
+
+.review_text p b{
+    color: black;
+    font-weight: bold;
+}
+
+/* 가격 */
+.price {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    text-align: right;
+}
+
+.price p {
+    font-family: 'SacheonUniverse';
+    font-size: 13px;
+    color: #777;
+}
+
+.price h2 {
+    margin: 4px 0;
+    font-size: 25px;
+    font-weight: bold;
+    color: #FF8682;
+}
+
+.price h2 span {
+    font-size: 13px;
+    color: #FF8682;
+}
+
+.price small {
+    font-size: 11px;
+    color: #999;
+}
+
+/* 구분선 */
+.divider {
+    width: 100%;
+    height: 1px;
+    background: #eee;
+    margin: 8px 0;
+}
+
+/* 버튼 */
+.two {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.two button {
+    border: none;
+    border-radius: 6px;
+    padding: 6px 8px;
+    font-size: 12px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.two .heart {
+    background: none;
+    border: 1px solid #46BD7B;
+    color: #FF8682;
+    width: 40px;
+    height: 32px;
+}
+
+/*하트 찜 반응형*/
+.heart i {
+    font-size: 20px;
+    cursor: pointer;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.heart i.fa-solid.active-heart {
+    color: red;
+    animation: heartBeat 0.4s ease forwards, sparkle 0.6s ease forwards;
+}
+
+/* 튕김 효과 */
+@keyframes heartBeat {
+    0%   {
+        transform: scale(1);
+    }
+    30%  {
+        transform: scale(1.4);
+    }
+    50%  {
+        transform: scale(0.9);
+    }
+    70%  {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* 반짝반짝 거리는 효과 */
+@keyframes sparkle {
+    0%   {
+        text-shadow: 0 0 0px rgba(255, 0, 0, 0);
+    }
+    50%  {
+        text-shadow: 0 0 15px rgba(255, 0, 0, 0.8);
+    }
+    100% {
+        text-shadow: 0 0 0px rgba(255, 0, 0, 0);
+    }
+}
+
+.two .view {
+    flex: 1;
+    background: #46BD7B;
+    color: white;
+}
+
+.two .view:hover {
+    background: #3a9e65;
+}
+
+/*추천인 부분*/
+.showing {
+    margin-top: 10px;
+    font-size: 15px;
+    display: flex;
+    gap: 580px;
+    align-items: center;
+}
+
+
+
+.place p{
+    font-family: 'KccSign' ;
+    color: black;
+}
+
+.place{
+    width: 150px;
+    margin-left: 45px;
+}
+
+.menu {
+    display: flex;
+    background-color: initial;
+    border: none;
+    align-items: center;
+    cursor: pointer;
+    font-size: 13px;
+}
+
+.menu p {
+    width: 100px;
+}
+
+.menu i {
+    margin-left: 2px;
+}
+
+.menu span{
+    font-weight: bold;
+    color: black;
+}
+/* 박스 배경 */
+.sort_modal {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255,255,255,0.8);
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+/* 추천인 고르는 내부 */
+.sort_content {
+    background: #fff;
+    width: 100%;
+    max-width: 800px;
+    border-radius: 16px 16px 0 0;
+    padding: 20px;
+    box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+    animation: slideUp 0.3s ease;
+
+}
+
+.sort_content ol {
+    list-style: none;
+    padding: 12px 0;
+    cursor: pointer;
+    font-size: 16px;
+    border-bottom: 1px solid #d2d2d2;
+}
+
+.sort_content ol:hover{
+    background-color: #BEF5BE;
+}
+
+/*모텔, 호텔, 리조트 탭 메뉴*/
+.tab_menu {
+    display: flex;
+   background: #fff;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.17);
+    border-radius: 10px;
+    padding: 20px 40px;
+    max-width: 850px;
+    margin: 30px auto;
+    position: relative;
+    top: 170px;
+    left: 12%;
+    /*z-index:5;*/
+}
+
+.tab_item {
+    flex: 1;
+    text-align: center;
+    padding: 1px 0;
+    cursor: pointer;
+    position: relative;
+    transition: color 0.2s ease;
+}
+
+.tab_item.active::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -20px;
+    width: 100%;
+    height: 3px;
+    background: #46BD7B;
+}
+
+.tab_item h4 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+    color: #112211;
+}
+
+.tab_item p {
+    margin: 5px 0 0;
+    font-size: 14px;
+    color: #888;
+}
+
+.tab_item.active h4 {
+    color: #112211;
+}
+
+/*추가적인 더보기 버튼*/
+.button_result {
+    display: block;
+    text-align: center;
+    margin: 20px 0;
+}
+
+.button_result button {
+    width: 50%;
+    height: 35px;
+    margin-left: 20%;
+    font-size: 18px;
+    font-weight: bold;
+    background: #464646;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.30);
+    border: none;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.button_result button:hover{
+    background: #282828;
+    cursor: pointer;
+}

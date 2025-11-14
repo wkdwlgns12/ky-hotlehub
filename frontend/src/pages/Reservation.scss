@@ -1,0 +1,269 @@
+.reservation-page {
+  min-height: 100vh;
+  background: #f8f9fa;
+  padding: 2rem 0 4rem;
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      color: #333;
+    }
+  }
+
+  .loading-container,
+  .error-container {
+    text-align: center;
+    padding: 4rem 2rem;
+
+    .spinner {
+      width: 50px;
+      height: 50px;
+      border: 4px solid #f3f3f3;
+      border-top: 4px solid #667eea;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+      margin: 0 auto 1rem;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+  }
+
+  .reservation-content {
+    display: grid;
+    grid-template-columns: 1fr 400px;
+    gap: 2rem;
+  }
+
+  .booking-form-section {
+    .hotel-summary {
+      background: white;
+      border-radius: 12px;
+      padding: 1.5rem;
+      display: flex;
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+
+      img {
+        width: 150px;
+        height: 150px;
+        object-fit: cover;
+        border-radius: 8px;
+      }
+
+      .info {
+        flex: 1;
+
+        h2 {
+          font-size: 1.5rem;
+          margin-bottom: 0.5rem;
+          color: #333;
+        }
+
+        .location {
+          color: #666;
+          margin-bottom: 1rem;
+        }
+
+        .room-info {
+          background: #f8f9fa;
+          padding: 1rem;
+          border-radius: 8px;
+
+          h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.25rem;
+            color: #667eea;
+          }
+
+          p {
+            color: #666;
+            font-size: 0.9rem;
+          }
+        }
+      }
+    }
+
+    .error-message {
+      background: #fee;
+      color: #c33;
+      padding: 1rem;
+      border-radius: 8px;
+      margin-bottom: 1.5rem;
+    }
+
+    .booking-form {
+      background: white;
+      border-radius: 12px;
+      padding: 2rem;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+
+      .form-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+      }
+
+      .form-group {
+        margin-bottom: 1.5rem;
+
+        label {
+          display: block;
+          margin-bottom: 0.5rem;
+          color: #555;
+          font-weight: 500;
+        }
+
+        input,
+        select {
+          width: 100%;
+          padding: 0.875rem;
+          border: 1px solid #ddd;
+          border-radius: 8px;
+          font-size: 1rem;
+
+          &:focus {
+            outline: none;
+            border-color: #667eea;
+          }
+        }
+
+        .points-input {
+          display: flex;
+          flex-direction: column;
+          gap: 0.5rem;
+
+          .available {
+            color: #667eea;
+            font-size: 0.9rem;
+            font-weight: 600;
+          }
+        }
+      }
+
+      .divider {
+        height: 1px;
+        background: #eee;
+        margin: 2rem 0;
+      }
+
+      .discount-section {
+        margin-bottom: 2rem;
+
+        h3 {
+          font-size: 1.25rem;
+          margin-bottom: 1.5rem;
+          color: #333;
+        }
+      }
+
+      .btn-submit {
+        width: 100%;
+        padding: 1.25rem;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        border: none;
+        border-radius: 8px;
+        font-size: 1.1rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: transform 0.2s;
+
+        &:hover:not(:disabled) {
+          transform: translateY(-2px);
+        }
+
+        &:disabled {
+          opacity: 0.6;
+          cursor: not-allowed;
+        }
+      }
+    }
+  }
+
+  .price-summary {
+    background: white;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    height: fit-content;
+    position: sticky;
+    top: 100px;
+
+    h3 {
+      font-size: 1.25rem;
+      margin-bottom: 1.5rem;
+      color: #333;
+    }
+
+    .summary-item {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 1rem;
+      font-size: 0.95rem;
+
+      &.discount {
+        color: #28a745;
+        font-weight: 600;
+      }
+
+      &.total {
+        font-size: 1.25rem;
+        font-weight: 700;
+        color: #667eea;
+        padding-top: 1rem;
+      }
+    }
+
+    .divider {
+      height: 1px;
+      background: #eee;
+      margin: 1.5rem 0;
+    }
+
+    .info-box {
+      background: #f0f7ff;
+      border: 1px solid #667eea;
+      padding: 1rem;
+      border-radius: 8px;
+      margin-top: 1.5rem;
+
+      p {
+        margin: 0;
+        color: #555;
+        font-size: 0.9rem;
+      }
+    }
+  }
+
+  @media (max-width: 968px) {
+    .reservation-content {
+      grid-template-columns: 1fr;
+    }
+
+    .price-summary {
+      position: static;
+    }
+
+    .booking-form-section .hotel-summary {
+      flex-direction: column;
+
+      img {
+        width: 100%;
+        height: 200px;
+      }
+    }
+
+    .form-row {
+      grid-template-columns: 1fr !important;
+    }
+  }
+}

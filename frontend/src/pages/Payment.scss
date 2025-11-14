@@ -1,0 +1,313 @@
+.payment-page {
+  min-height: 100vh;
+  background: #f8f9fa;
+  padding: 2rem 0 4rem;
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      color: #333;
+    }
+  }
+
+  .loading-container,
+  .error-container {
+    text-align: center;
+    padding: 4rem 2rem;
+
+    .spinner {
+      width: 50px;
+      height: 50px;
+      border: 4px solid #f3f3f3;
+      border-top: 4px solid #667eea;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+      margin: 0 auto 1rem;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+  }
+
+  .error-message {
+    background: #fee;
+    color: #c33;
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+  }
+
+  .payment-content {
+    display: grid;
+    grid-template-columns: 1fr 400px;
+    gap: 2rem;
+  }
+
+  .payment-info {
+    .info-section {
+      background: white;
+      border-radius: 12px;
+      padding: 2rem;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+
+      h2 {
+        font-size: 1.25rem;
+        margin-bottom: 1.5rem;
+        color: #333;
+      }
+
+      .info-card {
+        .hotel-info {
+          display: flex;
+          gap: 1.5rem;
+          margin-bottom: 1.5rem;
+          padding-bottom: 1.5rem;
+          border-bottom: 1px solid #eee;
+
+          img {
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 8px;
+          }
+
+          div {
+            flex: 1;
+
+            h3 {
+              font-size: 1.25rem;
+              margin-bottom: 0.5rem;
+              color: #333;
+            }
+
+            .location {
+              color: #666;
+              margin-bottom: 0.5rem;
+            }
+
+            .room-name {
+              color: #667eea;
+              font-weight: 600;
+            }
+          }
+        }
+
+        .reservation-details {
+          .detail-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+
+            .label {
+              color: #666;
+            }
+
+            .value {
+              font-weight: 600;
+              color: #333;
+            }
+          }
+        }
+      }
+
+      .payment-method {
+        .method-option {
+          border: 2px solid #ddd;
+          border-radius: 8px;
+          padding: 1rem;
+          cursor: pointer;
+          transition: all 0.2s;
+
+          &.selected {
+            border-color: #667eea;
+            background: #f0f7ff;
+          }
+
+          input {
+            display: none;
+          }
+
+          label {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            cursor: pointer;
+
+            .icon {
+              font-size: 1.5rem;
+            }
+
+            span:last-child {
+              font-weight: 600;
+            }
+          }
+        }
+      }
+
+      .payment-notice {
+        margin-top: 1rem;
+        color: #666;
+        font-size: 0.9rem;
+      }
+
+      .refund-policy {
+        ul {
+          list-style: none;
+          padding: 0;
+
+          li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #eee;
+            color: #555;
+
+            &:last-child {
+              border-bottom: none;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .payment-summary {
+    background: white;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    height: fit-content;
+    position: sticky;
+    top: 100px;
+
+    h2 {
+      font-size: 1.25rem;
+      margin-bottom: 1.5rem;
+      color: #333;
+    }
+
+    .summary-details {
+      .summary-row {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 1rem;
+        font-size: 0.95rem;
+
+        &.discount {
+          color: #28a745;
+          font-weight: 600;
+        }
+
+        &.total {
+          font-size: 1.25rem;
+          font-weight: 700;
+          color: #667eea;
+          padding-top: 1rem;
+        }
+      }
+
+      .divider {
+        height: 1px;
+        background: #eee;
+        margin: 1.5rem 0;
+      }
+
+      .points-info {
+        background: #f0f7ff;
+        border: 1px solid #667eea;
+        padding: 1rem;
+        border-radius: 8px;
+        margin-top: 1rem;
+
+        p {
+          margin: 0;
+          color: #555;
+          font-size: 0.9rem;
+        }
+      }
+    }
+
+    .btn-payment {
+      width: 100%;
+      padding: 1.25rem;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: transform 0.2s;
+      margin-top: 1.5rem;
+
+      &:hover:not(:disabled) {
+        transform: translateY(-2px);
+      }
+
+      &:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+      }
+    }
+
+    .btn-cancel {
+      width: 100%;
+      padding: 1rem;
+      background: white;
+      color: #666;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      margin-top: 1rem;
+      transition: all 0.2s;
+
+      &:hover:not(:disabled) {
+        background: #f8f9fa;
+        border-color: #999;
+      }
+
+      &:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+      }
+    }
+
+    .secure-notice {
+      text-align: center;
+      margin-top: 1.5rem;
+
+      p {
+        color: #666;
+        font-size: 0.9rem;
+        margin: 0;
+      }
+    }
+  }
+
+  @media (max-width: 968px) {
+    .payment-content {
+      grid-template-columns: 1fr;
+    }
+
+    .payment-summary {
+      position: static;
+    }
+
+    .payment-info .info-section .info-card .hotel-info {
+      flex-direction: column;
+
+      img {
+        width: 100%;
+        height: 200px;
+      }
+    }
+  }
+}

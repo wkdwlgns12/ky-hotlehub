@@ -1,0 +1,420 @@
+/*폰트*/
+/* 기존 CSS 스타일 */
+.rights {
+    width: 400px;
+    height: 600px;
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+    margin-top: 13px;
+    margin-right: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+p.centered-text  {
+    margin-right : 40px;
+}
+/* 오른쪽 이미지 영역 */
+.righter {
+    /* 기존 스타일 */
+    width: 300px;
+    height: 480px;
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 30px;
+    background-color: transparent;
+    margin-right: 25px;
+    margin-top: 120px;
+}
+
+/* 이미지 */
+.righter img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    overflow: hidden;
+    position: absolute;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    border-radius: 30px;
+}
+
+.righter img.active {
+    opacity: 1;
+}
+
+.dots {
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    bottom: 3%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+    z-index: 2;
+}
+
+.email-verify-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.email-verify-row input {
+    flex: 1;
+}
+
+.send-code-btn {
+    background-color: #8DD3BB;
+    border: none;
+    border-radius: 5px;
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 12px 15px;
+    white-space: nowrap;
+}
+
+.send-code-btn:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.search-address-btn {
+    background-color: #8DD3BB;
+    border: none;
+    border-radius: 5px;
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 0 15px;
+    height: 44px;
+    white-space: nowrap;
+}
+
+.row-input {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.row-input input {
+    flex-grow: 1;
+}
+
+.log_input .row-input input {
+    height: 44px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f9f9f9;
+}
+.login-box {
+    display: flex;
+    background: #F7F8F9;
+    border-radius: 10px;
+    overflow: hidden;
+    width: 800px;
+    max-width: 90%;
+}
+
+/* 이미지 하단 dot */
+.dots {
+    position: absolute;
+    bottom: 3%;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+    z-index: 2;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    background: white;
+    border-radius: 50%;
+    cursor: pointer;
+    opacity: 0.5;
+}
+
+.dot.active {
+    opacity: 1;
+    background: #8DD3BB;
+}
+
+
+/* 왼쪽 */
+/* 왼쪽 */
+.lefts {
+    flex: 1.5;
+    padding: 40px;
+    text-align: right;
+}
+.centered-text {
+    text-align: right   ;
+}
+
+.title-center,
+.subtitle-center {
+    text-align: center;
+}
+
+h4 {
+    font-size: 25px;
+    margin-bottom: 10px;
+}
+
+p {
+    color: gray;
+    font-size: 12px;
+    /* margin-bottom: 20px; */
+}
+
+/* 입력 박스 */
+.log_input input {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* 두 줄 정렬 */
+.row-input {
+    display: flex;
+    gap: 10px;
+}
+
+.row-input input {
+    flex: 1;
+}
+
+/* 비밀번호 박스 */
+.passwordbox {
+    position: relative;
+}
+
+.passwordbox input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.passwordbox i {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: gray;
+}
+
+/* 동의 체크박스 */
+
+/* 동의 체크박스 */
+.checkbox {
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    margin: 5px 0;
+    /* 추가: gap 속성으로 체크박스와 텍스트 사이 간격 조정 */
+    gap: 5px;
+}
+.checkbox label {
+    display: flex; /* 추가: label 내부 요소를 정렬하기 위해 flexbox 사용 */
+    align-items: center;
+    gap: 5px; /* 추가: 체크박스와 텍스트 사이 간격 조정 */
+}
+
+
+/* 버튼 */
+.loginbox {
+    width: 100%;
+    height: 40px;
+    border-radius: 5px;
+    border: none;
+    background-color: #8DD3BB;
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.loginbox.disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.signup {
+    font-family: "ELandNice";
+    margin-top: 15px;
+    color: black;
+    text-align: center;
+    cursor: pointer;
+}
+
+.error-border {
+    border: 1px solid red !important;
+}
+
+/* 에러 메시지 박스 */
+.error-box {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    color: red;
+    margin-top: 4px;
+}
+
+.error-box i {
+    font-size: 13px;
+}
+
+
+
+/* SNS 박스 */
+.snsbox {
+    display: flex;
+    margin-top: 15px;
+    justify-content: center;
+    gap: 10px;
+}
+
+.snsbox div {
+    display: flex;
+    border: 1px solid #8DD3BB;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-radius: 4px;
+    height: 40px;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.facebook{
+    color: blue;
+    width:120px;
+}
+.google{
+    width:120px;
+}
+.apple{
+    width:120px;
+}
+
+/* 경계선 */
+.boundary_line {
+    display: flex;
+    flex-basis: 100%;
+    align-items: center;
+    color: #112211;
+    font-size: 14px;
+    margin: 20px 0;
+}
+
+.boundary_line::before,
+.boundary_line::after {
+    content: "";
+    flex-grow: 1;
+    background: gray;
+    height: 1px;
+    margin: 0 7px;
+}
+
+/* 오른쪽 이미지 영역 */
+.right {
+    width: 200px;
+    height: 600px;
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+    margin-top: 13px;
+    margin-right: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* 이미지 슬라이드 */
+.right img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+.right img.active {
+    opacity: 1;
+}
+
+.dots {
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    bottom: 3%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+    z-index: 2;
+}
+.dot {
+    width: 10px;
+    height: 10px;
+    background: white;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.dot.active {
+    background: #8DD3BB;
+}
+
+/* 새로운 스타일 추가 */
+.email-verify-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.email-verify-row input {
+    flex: 1;
+}
+
+.send-code-btn {
+    background-color: #8DD3BB;
+    border: none;
+    border-radius: 5px;
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 12px 15px;
+    white-space: nowrap;
+}
+
+.send-code-btn:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}

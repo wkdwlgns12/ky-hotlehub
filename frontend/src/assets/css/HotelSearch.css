@@ -1,0 +1,693 @@
+/*  폰트 */
+/* ------------------ 폰트 ------------------ */
+@font-face {
+    font-family: 'Isamanru';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10@1.0/GongGothicLight.woff') format('woff');
+    font-weight: 300;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'OmuDaye';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-01@1.0/omyu_pretty.woff2') format('woff2');
+    font-weight: normal;
+    font-display: swap;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    width: 100%;
+}
+
+.container {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin: 0 auto;
+    background-color: #FFFFFF;
+    padding: 0 105px;
+    height: 87px;
+    box-sizing: border-box;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.item span {
+    display: flex;
+    gap: 4px;
+}
+
+.circle {
+    width: 45px;
+    height: 45px;
+    background-color: #D9D9D9;
+    border: 1px solid #000000;
+    border-radius: 50%;
+    position: relative;
+}
+
+.mini-circle {
+    position: absolute;
+    background-color: #FF8682;
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    top: 33px;
+    right: 1px;
+}
+
+.check {
+    width: 6px;
+    height: 3px;
+    border-left: 2px solid black;
+    border-bottom: 2px solid black;
+    transform: rotate(-45deg);
+    position: absolute;
+    top: -5px;
+    left: 3px;
+}
+
+.flex {
+    display: flex;
+    gap: 10px;
+}
+
+.vertical-center {
+    align-items: center;
+}
+
+.tab {
+    text-decoration: none;
+    color: #333;
+    bottom: -4px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.tab.active {
+    color: #333;
+}
+
+.tab.active::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 3px;
+
+    background-color: #333;
+    border-radius: 10px;
+}
+
+/*footer*/
+.subscription-box{
+    background-color: #cdeae1;
+    border-radius: 10px;
+    padding: 30px;
+    width: 1232px;
+    height: 305px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    bottom: 230px;
+    margin-bottom: 20px;
+}
+.subscription-form-container input{
+    width: 500px;
+    height: 50px;
+    background-color: white;
+    border-radius: 4px;
+}
+.subscription-form-container button{
+    width: 90px;
+    height: 50px;
+    color: white;
+    border-radius: 4px;
+    background-color: #112211;
+}
+
+.subscription-image{
+    margin-top: 2px;
+}
+
+footer{
+    background-color: #8dd3bb;
+    height: 422px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 40px 105px;
+    box-sizing: border-box;
+    align-items: center;
+    margin: 0 auto;
+    position: relative;
+    flex-direction: column;
+    margin-top: 37%;
+    text-align: left;
+}
+
+.subscription-content p{
+    color: black;
+}
+
+.footer-bottom{
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%; padding: 0 105px;
+    position: relative;
+    top: 70px
+}
+.footer-letter{
+    justify-content: space-evenly;
+}
+.footer-span{
+    display: flex;
+    flex-direction: column;
+    font-weight: bold;
+    font-size: 15pt;
+}
+.footer-span-details{
+    color: #375844;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    top: 13px;
+    gap: 10px;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: #fff;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+
+.nav-left {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-container .item {
+    display: flex;
+}
+
+.tab {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    color: #222;
+    padding-bottom: 5px;
+}
+
+.tab.active {
+    color: #112211;
+}
+
+.tab.active::after {
+    content: "";
+    position: absolute;
+    bottom: -30px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: #46BD7B;
+    border-radius: 0;
+}
+
+/*  Hero  */
+.hero {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    overflow: hidden;
+}
+
+.hero .image img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+}
+
+.hero_content {
+    text-align: left;
+    position: absolute;
+    top: 10%;
+    left: 2%;
+    color: white;
+    z-index: 2;
+}
+
+.hero_content h2 {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+}
+
+.hero_content p {
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 25px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+}
+
+.box h2 {
+    font-family: 'Isamanru';
+}
+
+/*  서치 박스 */
+.search_box {
+    position: absolute;
+    top: 63%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #fff;
+    padding: 25px 30px;
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    width: 100%;
+    max-width: 1250px;
+    box-sizing: border-box;
+}
+
+.search_title {
+    font-size: 20px;
+    color: black;
+    text-align: left;
+    margin-bottom: 35px;
+}
+
+.search_inputs {
+    display: flex;
+    align-items: flex-end;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.search_inputs input {
+    flex: 1;
+    min-width: 180px;
+    height: 45px;
+    padding: 10px 15px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    font-size: 14px;
+    outline: none;
+    transition: all 0.2s ease-in-out;
+    box-sizing: border-box;
+}
+
+.search_inputs input:focus {
+    border-color: #46BD7B;
+    box-shadow: 0 0 5px rgba(70, 189, 123, 0.4);
+}
+
+.search_inputs button:focus {
+    border-color: #46BD7B;
+    box-shadow: 0 0 5px rgba(70, 189, 123, 0.4);
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-width: 180px;
+}
+
+.input-group label {
+    font-size: 13px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.search_icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background-color: #46BD7B;
+    color: white;
+    border-radius: 10px;
+    padding: 0 25px;
+    height: 40px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    font-size: 16px;
+}
+
+.search_icon:hover {
+    background-color: #38a368;
+}
+
+.number_people {
+    display: flex;
+    background: none;
+    border: 1px solid #ddd;
+    padding: 10px 15px;
+    border-radius: 16px;
+    cursor: pointer;
+}
+
+/*  Rooms & Guests 모달  */
+.people_modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.7);
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.people_content {
+    background: #fff;
+    width: 100%;
+    max-width: 800px;
+    height: 90%;
+    max-height: 900px;
+    padding: 20px;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.people_content h3 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.counter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+.controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.controls button {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: none;
+    background: #46bd7b;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.controls button:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+}
+
+.warning {
+    font-size: 11px;
+    display: flex;
+    align-items: center;
+    background: #dddddd;
+    border-radius: 10px;
+    padding: 5px;
+    gap: 5px;
+    margin-top: 10px;
+}
+
+
+.modal-actions {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 40px;
+}
+
+.close_btn {
+    flex: 1;
+    background: #ccc;
+    color: black;
+    border: none;
+    padding: 12px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.apply_btn {
+    flex: 1;
+    background: #46bd7b;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.apply_btn:hover {
+    background: #38a368;
+}
+
+/* 슬라이드 애니메이션 */
+.slide-up-enter-active,
+.slide-up-leave-active {
+    transition: all 0.3s ease;
+}
+.slide-up-enter-from,
+.slide-up-leave-to {
+    transform: translateY(100%);
+    opacity: 0;
+}
+
+
+/*  여행에 빠지다  */
+.travel_container {
+    padding: 60px 105px;
+    position: relative;
+    text-align: left;
+}
+
+.travel_container > h3 {
+    color: black;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.travel_container > p {
+    text-align: left;
+    margin-bottom: 30px;
+    color: #555;
+}
+
+.travel_box {
+    width: max-content;
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 5%;
+}
+
+.card {
+    flex: 0 0 auto;
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+}
+
+.card img {
+    width: 320px;
+    height: 460px;
+    object-fit: cover;
+    border-radius: 15px;
+    display: block;
+}
+
+.card_text {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 20px;
+    color: white;
+}
+
+.card_text >  h4 {
+    text-align: left;
+    color: white;
+    font-size: 25px;
+    margin: 0 0 5px;
+}
+
+.card_text >  p {
+    font-size: 20px;
+    margin: 0 0 10px;
+    text-align: left;
+    font-weight: bold;
+    color: white;
+}
+
+.card_text .setting {
+    width: 110px;
+    font-size: 10px;
+    display: flex;
+}
+
+.card_text button {
+    padding: 10px 15px;
+    background-color: #46BD7B;
+    border: none;
+    border-radius: 3px;
+    color: black;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.card button {
+    width: auto;
+    height: 45px;
+}
+
+/* 슬라이드 */
+.slider {
+    display: flex;
+    overflow: visible;
+    position: relative;
+    scroll-snap-type: x mandatory;
+    border: none;
+    gap: 25px;
+}
+
+.slider::-webkit-scrollbar {
+    display: none;
+}
+
+.travel_box {
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    animation: bannermove 10s ease-in-out infinite alternate;
+}
+
+@keyframes bannermove {
+    0% { transform: translate(0); }
+    100% { transform: translate(-105%); }
+}
+
+/*  여행 더보기  */
+.tour_container {
+    padding: 60px 105px;
+    position: relative;
+    text-align: left;
+}
+
+.tour_box {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    gap: 70px;
+    justify-content: center;
+}
+
+.tour_container > h3 {
+    color: black;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.tour_container >  p {
+    text-align: left;
+    font-size: 16px;
+}
+
+.tour_text_box {
+    width: 552px;
+    height: 424px;
+    border-radius: 20px;
+    margin-top: 30px;
+    background-color: #8DD3BB;
+}
+
+.tour_text_box > h1 {
+    color: black;
+    font-size: 40px;
+    padding: 1px 5px;
+}
+
+.tour_text_box > p {
+    margin-top: 30px;
+    text-align: left;
+    font-size: 13px;
+    color: black;
+    padding: 10px 10px;
+}
+
+.tour_text_box button {
+    width: 504px;
+    height: 48px;
+    border: none;
+    background-color: white;
+    text-align: center;
+    margin-top: 10%;
+    margin-left: 25px;
+    font-size: 15px;
+    padding: 10px 10px;
+    font-family: 'OmuDaye';
+    cursor: pointer;
+}
+
+.tour_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px;
+}
+
+.free {
+    min-width: 80px;
+    height: 65px;
+    text-align: center;
+    background-color: white;
+    border-radius: 8px;
+    margin-right: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.free p {
+    font-size: 16px;
+    font-weight: bold;
+    color: black;
+}
+
+/* 말라카 투어 이미지 */
+.tour_images {
+    margin-top: 30px;
+    display: grid;
+    gap: 15px;
+}
+.tour_images img {
+    border-radius: 12px;
+    border: 2px solid #8DD3BB;
+    width: 318px;
+    height: 200px;
+    object-fit: cover;
+}

@@ -1,0 +1,700 @@
+.mypage {
+  min-height: 100vh;
+  background: #f8f9fa;
+  padding: 2rem 0 4rem;
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  .mypage-header {
+    margin-bottom: 2rem;
+
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+      color: #333;
+    }
+
+    .user-info {
+      .info-card {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        padding: 2rem;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+
+        h3 {
+          font-size: 1.5rem;
+          margin-bottom: 0.5rem;
+        }
+
+        p {
+          opacity: 0.9;
+          margin-bottom: 1.5rem;
+        }
+
+        .points-display {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding-top: 1rem;
+          border-top: 1px solid rgba(255, 255, 255, 0.3);
+
+          .label {
+            font-size: 1rem;
+          }
+
+          .amount {
+            font-size: 1.75rem;
+            font-weight: 700;
+          }
+        }
+      }
+    }
+  }
+
+  .tabs {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    border-bottom: 2px solid #eee;
+
+    button {
+      padding: 1rem 2rem;
+      background: none;
+      border: none;
+      color: #666;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      position: relative;
+      transition: color 0.2s;
+
+      &:hover {
+        color: #667eea;
+      }
+
+      &.active {
+        color: #667eea;
+
+        &::after {
+          content: '';
+          position: absolute;
+          bottom: -2px;
+          left: 0;
+          right: 0;
+          height: 2px;
+          background: #667eea;
+        }
+      }
+    }
+  }
+
+  .tab-content {
+    .loading {
+      text-align: center;
+      padding: 4rem 2rem;
+
+      .spinner {
+        width: 50px;
+        height: 50px;
+        border: 4px solid #f3f3f3;
+        border-top: 4px solid #667eea;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+        margin: 0 auto 1rem;
+      }
+
+      @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+    }
+
+    .error {
+      background: #fee;
+      color: #c33;
+      padding: 1rem;
+      border-radius: 8px;
+      text-align: center;
+    }
+
+    .empty {
+      text-align: center;
+      padding: 4rem 2rem;
+      color: #666;
+
+      p {
+        margin-bottom: 1.5rem;
+      }
+    }
+  }
+
+  .reservations-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+
+    .reservation-card {
+      background: white;
+      border-radius: 12px;
+      padding: 1.5rem;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+
+      .card-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 1.5rem;
+
+        .status-badge {
+          padding: 0.5rem 1rem;
+          border-radius: 20px;
+          font-size: 0.9rem;
+          font-weight: 600;
+
+          &.pending {
+            background: #fff4e6;
+            color: #f59e0b;
+          }
+
+          &.confirmed {
+            background: #d1fae5;
+            color: #059669;
+          }
+
+          &.cancelled {
+            background: #fee;
+            color: #dc2626;
+          }
+
+          &.completed {
+            background: #e0e7ff;
+            color: #667eea;
+          }
+        }
+
+        .reservation-date {
+          color: #666;
+          font-size: 0.9rem;
+        }
+      }
+
+      .card-body {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 1.5rem;
+
+        .hotel-info {
+          display: flex;
+          gap: 1.5rem;
+          flex: 1;
+
+          img {
+            width: 150px;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 8px;
+          }
+
+          .details {
+            h3 {
+              font-size: 1.25rem;
+              margin-bottom: 0.5rem;
+              color: #333;
+            }
+
+            .room-name {
+              color: #667eea;
+              font-weight: 600;
+              margin-bottom: 0.5rem;
+            }
+
+            p {
+              color: #666;
+              margin-bottom: 0.25rem;
+              font-size: 0.95rem;
+            }
+          }
+        }
+
+        .price-info {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-end;
+          justify-content: center;
+
+          .label {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 0.25rem;
+          }
+
+          .amount {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #667eea;
+          }
+        }
+      }
+
+      .card-actions {
+        display: flex;
+        gap: 1rem;
+        justify-content: flex-end;
+
+        button {
+          padding: 0.75rem 1.5rem;
+          border: none;
+          border-radius: 8px;
+          font-weight: 600;
+          cursor: pointer;
+          transition: transform 0.2s;
+
+          &:hover {
+            transform: translateY(-2px);
+          }
+
+          &.btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+          }
+
+          &.btn-secondary {
+            background: white;
+            color: #667eea;
+            border: 2px solid #667eea;
+          }
+
+          &.btn-cancel {
+            background: white;
+            color: #dc2626;
+            border: 2px solid #dc2626;
+          }
+        }
+      }
+    }
+  }
+
+  .points-section {
+    .points-summary {
+      background: white;
+      border-radius: 12px;
+      padding: 2rem;
+      text-align: center;
+      margin-bottom: 2rem;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+
+      h2 {
+        color: #666;
+        margin-bottom: 1rem;
+        font-size: 1.25rem;
+      }
+
+      .balance {
+        font-size: 3rem;
+        font-weight: 700;
+        color: #667eea;
+        margin: 0;
+      }
+    }
+
+    .points-history {
+      background: white;
+      border-radius: 12px;
+      padding: 2rem;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+
+      h3 {
+        margin-bottom: 1.5rem;
+        color: #333;
+      }
+
+      .history-list {
+        .history-item {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 1rem 0;
+          border-bottom: 1px solid #eee;
+
+          &:last-child {
+            border-bottom: none;
+          }
+
+          .info {
+            display: flex;
+            flex-direction: column;
+
+            .description {
+              color: #333;
+              margin-bottom: 0.25rem;
+            }
+
+            .date {
+              color: #999;
+              font-size: 0.85rem;
+            }
+          }
+
+          .amount {
+            font-size: 1.25rem;
+            font-weight: 700;
+
+            &.earned {
+              color: #059669;
+            }
+
+            &.used {
+              color: #dc2626;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .profile-section {
+    background: white;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+
+    .profile-form {
+      max-width: 500px;
+
+      .form-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 1.5rem;
+
+        h3 {
+          margin: 0;
+          color: #333;
+        }
+
+        .btn-edit {
+          padding: 0.5rem 1.5rem;
+          background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+          color: white;
+          border: none;
+          border-radius: 8px;
+          font-weight: 600;
+          cursor: pointer;
+          transition: transform 0.2s;
+
+          &:hover {
+            transform: translateY(-2px);
+          }
+        }
+      }
+
+      h3 {
+        margin-bottom: 1.5rem;
+        color: #333;
+      }
+
+      .form-group {
+        margin-bottom: 1.5rem;
+
+        label {
+          display: block;
+          color: #555;
+          font-weight: 600;
+          margin-bottom: 0.5rem;
+        }
+
+        input {
+          width: 100%;
+          padding: 0.875rem;
+          border: 1px solid #ddd;
+          border-radius: 8px;
+          font-size: 1rem;
+          background: #fff;
+          transition: all 0.3s;
+
+          &:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+          }
+
+          &:read-only {
+            background: #f8f9fa;
+            cursor: default;
+          }
+
+          &.readonly {
+            background: #f0f0f0;
+            color: #888;
+            cursor: not-allowed;
+          }
+        }
+
+        small {
+          display: block;
+          color: #888;
+          font-size: 0.875rem;
+          margin-top: 0.25rem;
+        }
+      }
+
+      .button-group {
+        display: flex;
+        gap: 1rem;
+        margin-top: 2rem;
+
+        button {
+          flex: 1;
+          padding: 1rem 2rem;
+          border: none;
+          border-radius: 8px;
+          font-weight: 600;
+          cursor: pointer;
+          transition: transform 0.2s;
+
+          &:hover {
+            transform: translateY(-2px);
+          }
+
+          &.btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+          }
+
+          &.btn-secondary {
+            background: #6c757d;
+            color: white;
+          }
+
+          &.btn-danger {
+            background: #dc2626;
+            color: white;
+          }
+        }
+      }
+    }
+  }
+
+  // Modal styles
+  .modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    animation: fadeIn 0.2s ease-out;
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    .modal-content {
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+      max-width: 500px;
+      width: 90%;
+      max-height: 90vh;
+      overflow-y: auto;
+      animation: slideUp 0.3s ease-out;
+
+      @keyframes slideUp {
+        from {
+          transform: translateY(50px);
+          opacity: 0;
+        }
+        to {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+
+      .modal-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1.5rem 2rem;
+        border-bottom: 1px solid #eee;
+
+        h3 {
+          margin: 0;
+          color: #333;
+        }
+
+        .modal-close {
+          background: none;
+          border: none;
+          font-size: 1.5rem;
+          color: #999;
+          cursor: pointer;
+          padding: 0;
+          width: 32px;
+          height: 32px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border-radius: 50%;
+          transition: all 0.2s;
+
+          &:hover {
+            background: #f0f0f0;
+            color: #333;
+          }
+        }
+      }
+
+      .modal-body {
+        padding: 2rem;
+
+        .form-group {
+          margin-bottom: 1.5rem;
+
+          label {
+            display: block;
+            color: #555;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+          }
+
+          input {
+            width: 100%;
+            padding: 0.875rem;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: all 0.3s;
+
+            &:focus {
+              outline: none;
+              border-color: #667eea;
+              box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+            }
+          }
+        }
+      }
+
+      .modal-footer {
+        display: flex;
+        gap: 1rem;
+        padding: 1.5rem 2rem;
+        border-top: 1px solid #eee;
+
+        button {
+          flex: 1;
+          padding: 1rem 2rem;
+          border: none;
+          border-radius: 8px;
+          font-weight: 600;
+          cursor: pointer;
+          transition: transform 0.2s;
+
+          &:hover {
+            transform: translateY(-2px);
+          }
+
+          &.btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+          }
+
+          &.btn-secondary {
+            background: #6c757d;
+            color: white;
+          }
+        }
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    .tabs {
+      overflow-x: auto;
+
+      button {
+        white-space: nowrap;
+      }
+    }
+
+    .reservation-card {
+      .card-body {
+        flex-direction: column;
+        gap: 1.5rem;
+
+        .hotel-info {
+          img {
+            width: 100%;
+            height: 180px;
+          }
+        }
+
+        .price-info {
+          align-items: flex-start;
+        }
+      }
+
+      .card-actions {
+        flex-direction: column;
+
+        button {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  .danger-zone {
+    margin-top: 3rem;
+    padding: 2rem;
+    background: #fff5f5;
+    border: 2px solid #dc2626;
+    border-radius: 12px;
+
+    h3 {
+      color: #dc2626;
+      margin-bottom: 1rem;
+      font-size: 1.5rem;
+    }
+
+    p {
+      color: #991b1b;
+      margin-bottom: 1.5rem;
+      line-height: 1.6;
+    }
+
+    .btn-delete-account {
+      background: #dc2626;
+      color: white;
+      padding: 1rem 2rem;
+      border: none;
+      border-radius: 8px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s;
+
+      &:hover {
+        background: #b91c1c;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(220, 38, 38, 0.3);
+      }
+
+      &:active {
+        transform: translateY(0);
+      }
+    }
+  }
+}

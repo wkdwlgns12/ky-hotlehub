@@ -1,0 +1,361 @@
+/*폰트*/
+@font-face {
+    font-family: "ELandNice";
+    src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts-20-12@1.0/ELAND_Nice_M.woff")
+    format("woff");
+    font-weight: normal;
+    font-display: swap;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Email과 Password 입력란을 감싸는 컨테이너 스타일 */
+.log_input .input-container {
+    position: relative;
+    margin: 10px 0;
+}
+
+/* Email 입력란 스타일 */
+.log_input .input-container input[type="text"] {
+    width: 100%;
+    padding: 12px 12px 12px 35px; /* 왼쪽 패딩 추가 */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Email 아이콘 위치 */
+.log_input .input-container i {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #888;
+    pointer-events: none;
+}
+
+.password {
+    position: relative;
+    margin: 10px 0;
+}
+
+.log_input .password input {
+    padding: 12px 40px 12px 35px;
+}
+
+.password .left-icon {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #888;
+    pointer-events: none;
+}
+
+.password .right-icon {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #888;
+}
+
+body {
+    /* min-height: 100vh; */
+    /* background: #fff; */
+    /* display: flex; */
+    /* justify-content: center; */
+    /* align-items: center; */
+}
+
+
+.login_page {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url("../img/travel5.jpg");
+    animation: gradientBG 15s ease infinite;
+    overflow: hidden;
+}
+@keyframes gradientBG {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+/* 투명 효과 */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    background: transparent !important;
+}
+
+.left {
+    flex: 1;
+    padding: 40px;
+}
+
+h4 {
+    color: black;
+    font-size: 25px;
+    margin-bottom: 10px;
+    text-align: right;
+    margin-right: 20px;
+}
+
+p {
+    color: black;
+    font-size: 12px;
+    /* margin-bottom: 20px; */
+    text-align: right;
+}
+
+.login_text {
+    font-weight: bold;
+    color: #B9062F;
+    margin-right: 15px;
+    margin-bottom: 25px;
+}
+
+/* 입력창 */
+.log_input input {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.password {
+    position: relative;
+}
+
+.password i {
+    color: black;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(140%);
+    cursor: pointer;
+}
+
+.check2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+    margin: 5px 0;
+}
+
+.check2 label{
+    gap: 5px;
+}
+
+
+.text2 {
+    color: red;
+    padding-bottom: 5px;
+    font-size: 10px;
+    cursor: pointer;
+}
+
+.loginbox {
+    width: 100%;
+    height: 40px;
+    border-radius: 5px;
+    border: none;
+    background-color: #8DD3BB;
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.signup {
+    font-family: "ELandNice";
+    margin-top: 15px;
+    color: black;
+    text-align: center;
+    cursor: pointer;
+}
+
+a {
+    text-decoration-line: none;
+    color: inherit;
+}
+
+/* sns */
+.snsbox {
+    display: flex;
+    margin-top: 15px;
+    justify-content: center;
+    gap: 10px;
+}
+
+.snsbox a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 120px;
+    height: 40px;
+
+    border: 2px solid #8DD3BB; /* 모든 버튼에 동일한 테두리 적용 */
+    border-radius: 4px; /* 사각형 모서리 유지 */
+
+    text-decoration: none;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+.snsbox a:hover {
+    opacity: 0.9;
+}
+
+/* 이미지 로고 크기 설정 */
+.snsbox a img {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+}
+
+
+/* 경계선 */
+.boundary_line {
+    display: flex;
+    flex-basis: 100%;
+    align-items: center;
+    color: #112211;
+    font-size: 18px;
+    margin: 6px 0px;
+}
+
+.boundary_line::before,
+.boundary_line::after {
+    content: "";
+    flex-grow: 1;
+    background: gray;
+    height: 1px;
+    font-size: 0px;
+    line-height: 0px;
+    margin: 25px 7px;
+}
+
+/* 오른쪽 이미지 영역 */
+
+.rights{
+    width: 400px;
+    height: 600px;
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+    margin-top: 130px;
+    margin-right: 35px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+
+}
+
+.login-area {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    display: flex;
+    border-radius: 10px;
+    overflow: hidden;
+    width: 800px;
+    max-width: 90%;
+    height: 600px;
+}
+
+.Img_right {
+    width: 400px;
+    height: 350px;
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 30px;
+    background-color: transparent;
+    margin-right: 25px;
+    margin-top: 125px;
+}
+
+/* 이미지 */
+.Img_right img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    overflow: hidden;
+    position: absolute;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    border-radius: 30px;
+}
+
+.Img_right img.active {
+    opacity: 1;
+}
+
+/* 이미지 하단 dot */
+.dots {
+    position: absolute;
+    bottom: 3%;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+    z-index: 2;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    background: white;
+    border-radius: 50%;
+    cursor: pointer;
+    opacity: 0.5;
+}
+
+.dot.active {
+    opacity: 1;
+    background: #8DD3BB;
+}
+
+/* SNS 로그인 버튼 */
+.snsbox {
+    display: flex;
+    margin-top: 15px;
+    justify-content: center;
+    gap: 10px;
+}
+
+.snsbox div {
+    display: flex;
+    border: 2px solid #8DD3BB;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-radius: 4px;
+    height: 40px;
+    font-size: 15px;
+    cursor: pointer;
+}
