@@ -1,0 +1,32 @@
+{
+  "dependencies": {
+    "express": "^5.1.0",
+    "mongoose": "^8.19.3"
+  },
+  "name": "yes",
+  "version": "1.0.0",
+  "description": "호텔 팀프로젝트",
+  "main": "app.js",
+  "devDependencies": {
+    "jest": "^30.2.0",
+    "mongodb-memory-server": "^10.3.0",
+    "nodemon": "^3.1.11",
+    "supertest": "^7.1.4"
+  },
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wkdwlgns12/ky-hotlehub.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wkdwlgns12/ky-hotlehub/issues"
+  },
+  "homepage": "https://github.com/wkdwlgns12/ky-hotlehub#readme"
+}
